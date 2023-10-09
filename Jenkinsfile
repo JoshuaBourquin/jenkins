@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build'
+                echo 'Build - Possible tool: Maven'
             }
         }
         stage('Test') {
             steps {
-                echo 'Test'
+                echo 'Test - Possible tool: JUnit'
             }
             post{
                 success {
@@ -28,12 +28,12 @@ pipeline {
         }
         stage('Code Analysis') {
             steps {
-                echo 'Code Analysis'
+                echo 'Code Analysis - Possible tool: Raxis'
             }
         }
         stage('Security Scan') {
             steps {
-                echo 'Security Scan'
+                echo 'Security Scan - Possible tool: ZAP'
             }
             post{
                 success {
@@ -57,7 +57,7 @@ pipeline {
         }
         stage('Integration Tests on Staging') {
             steps {
-                echo 'Integration Tests on Staging'
+                echo 'Integration Tests on Staging - Possible tool: Testsigma'
             }
         }
         stage('Deploy to Production') {
