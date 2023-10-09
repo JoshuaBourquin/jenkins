@@ -12,9 +12,16 @@ pipeline {
                 echo 'Test'
             }
             post{
-                mail to: "joshualbourquin@gmail.com",
-                subject: "Test Status Email",
-                body: "Test Status"
+                success {
+                    mail to: "joshualbourquin@gmail.com",
+                    subject: "Test Status Email - Success",
+                    body: "Test ran successfully."
+                }
+                unsuccessful {
+                    mail to: "joshualbourquin@gmail.com",
+                    subject: "Test Status Email - Unsuccessful",
+                    body: "Test ran unsuccessfully."
+                }
             }
         }
         stage('Code Analysis') {
@@ -27,9 +34,16 @@ pipeline {
                 echo 'Security Scan'
             }
             post{
-                mail to: "joshualbourquin@gmail.com",
-                subject: "Security Scan Status Email",
-                body: "Security Scan Status"
+                success {
+                    mail to: "joshualbourquin@gmail.com",
+                    subject: "Security Scan Status Email - Success",
+                    body: "Security Scan ran successfully."
+                }
+                unsuccessful {
+                    mail to: "joshualbourquin@gmail.com",
+                    subject: "Security Scan Status Email - Unsuccessful",
+                    body: "Security Scan ran unsuccessfully."
+                }
             }
         }
         stage('Deploy to Staging') {
