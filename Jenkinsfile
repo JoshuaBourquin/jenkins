@@ -13,14 +13,16 @@ pipeline {
             }
             post{
                 success {
-                    mail to: "joshualbourquin@gmail.com",
+                    emailext to: "joshualbourquin@gmail.com",
                     subject: "Test Status Email - Success",
-                    body: "Test ran successfully."
+                    body: "Test ran successfully.",
+                    attachLog: true
                 }
                 unsuccessful {
-                    mail to: "joshualbourquin@gmail.com",
+                    emailext to: "joshualbourquin@gmail.com",
                     subject: "Test Status Email - Unsuccessful",
-                    body: "Test ran unsuccessfully."
+                    body: "Test ran unsuccessfully.",
+                    attachLog: true
                 }
             }
         }
@@ -35,14 +37,16 @@ pipeline {
             }
             post{
                 success {
-                    mail to: "joshualbourquin@gmail.com",
+                    emailext to: "joshualbourquin@gmail.com",
                     subject: "Security Scan Status Email - Success",
-                    body: "Security Scan ran successfully."
+                    body: "Security Scan ran successfully.",
+                    attachLog: true
                 }
                 unsuccessful {
-                    mail to: "joshualbourquin@gmail.com",
+                    emailext to: "joshualbourquin@gmail.com",
                     subject: "Security Scan Status Email - Unsuccessful",
-                    body: "Security Scan ran unsuccessfully."
+                    body: "Security Scan ran unsuccessfully.",
+                    attachLog: true
                 }
             }
         }
